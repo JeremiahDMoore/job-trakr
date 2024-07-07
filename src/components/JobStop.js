@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import CurrentJobs from './CurrentJobs';
 
-function JobForm() {
+function JobStop() {
     const [formData, setFormData] = useState({
         empNum: 'from login',
         timeIn: 'from jobStart',
@@ -107,7 +107,7 @@ function JobForm() {
 
     return (
         <form id="jobForm" onSubmit={handleSubmit} className="container">
-            <h1>Job Tracker</h1>
+            <h1>Stop working on a job</h1>
 
             <label htmlFor="empNum">Employee Number:</label>
             <input 
@@ -157,7 +157,7 @@ function JobForm() {
                 </button>
             </div>
 
-            <label htmlFor="opNum">Operation Number:</label>
+            {/* <label htmlFor="opNum">Operation Number:</label>
             <input 
                 type="number" 
                 id="opNum" 
@@ -183,7 +183,7 @@ function JobForm() {
                 maxLength="7"
                 placeholder="e.g., 123-4567"
                 aria-label="Job Number"
-            />
+            /> */}
 
             <label htmlFor="jobNotes">Job Notes:</label>
             <textarea 
@@ -195,7 +195,7 @@ function JobForm() {
                 aria-label="Job Notes"
             ></textarea>
 
-            <label htmlFor="dept">Department:</label>
+            {/* <label htmlFor="dept">Department:</label>
             <select 
                 id="dept" 
                 name="dept" 
@@ -228,9 +228,9 @@ function JobForm() {
                 title="Must be in HH:MM:SS format"
                 placeholder="HH:MM:SS"
                 aria-label="Cycle Time"
-            />
+            /> */}
 
-            <label htmlFor="jobPhoto">Job Photo:</label>
+            {/* <label htmlFor="jobPhoto">Job Photo:</label>
             <input 
                 type="file" 
                 id="jobPhoto" 
@@ -238,11 +238,11 @@ function JobForm() {
                 onChange={handleFileChange} 
                 accept="image/*" 
                 aria-label="Job Photo"
-            />
-
+            /> */}
+            <p></p>
             <button type="submit">Submit</button>
         </form>
     );
 }
 
-export default JobForm;
+export default JobStop;

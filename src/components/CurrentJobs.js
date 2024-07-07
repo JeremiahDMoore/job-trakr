@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import '../currentJobs.css';
+import './currentJobs.css';
 
 function CurrentJobs() {
     const [jobs, setJobs] = useState([
-        { _id: '1', timeIn: '08:00', empNum: '123', opNum: '101', jobNum: '456-7890' },
-        { _id: '2', timeIn: '09:15', empNum: '124', opNum: '102', jobNum: '123-4567' },
-        { _id: '3', timeIn: '10:30', empNum: '125', opNum: '103', jobNum: '789-0123' },
-        { _id: '4', timeIn: '11:45', empNum: '126', opNum: '104', jobNum: '345-6789' },
-        { _id: '5', timeIn: '13:00', empNum: '127', opNum: '105', jobNum: '567-8901' },
+        { _id: '1', timeIn: '08:00', jobDescrip: 'description of job goes here', opNum: '101', jobNum: '4567890' },
+        { _id: '2', timeIn: '09:15', jobDescrip: 'description of job goes here', opNum: '102', jobNum: '1234567' },
+        { _id: '3', timeIn: '10:30', jobDescrip: 'description of job goes here', opNum: '103', jobNum: '7890123' },
+        { _id: '4', timeIn: '11:45', jobDescrip: 'description of job goes here', opNum: '104', jobNum: '3456789' },
+        { _id: '5', timeIn: '13:00', jobDescrip: 'description of job goes here', opNum: '105', jobNum: '5678901' },
     ]);
     const [selectedJobs, setSelectedJobs] = useState([]);
 
@@ -25,16 +25,17 @@ function CurrentJobs() {
     };
 
     return (
-        <div className="container">
+        <div className="">
             <h1>Current Jobs</h1>
             <table className="jobs-table">
                 <thead>
                     <tr>
                         <th>Select</th>
-                        <th>Time In</th>
-                        <th>Employee Number</th>
-                        <th>Operation Number</th>
-                        <th>Job Number</th>
+                        <th>Start</th>
+                        <th>Job #</th>
+                        <th>Op #</th>
+                        <th>Description</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -48,9 +49,9 @@ function CurrentJobs() {
                                 />
                             </td>
                             <td>{job.timeIn}</td>
-                            <td>{job.empNum}</td>
-                            <td>{job.opNum}</td>
                             <td>{job.jobNum}</td>
+                            <td>{job.opNum}</td>
+                            <td>{job.jobDescrip}</td>
                         </tr>
                     ))}
                 </tbody>
