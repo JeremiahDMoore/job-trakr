@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import CurrentJobs from './CurrentJobs';
 
 function JobForm() {
     const [formData, setFormData] = useState({
-        empNum: '',
-        timeIn: '',
+        empNum: 'from login',
+        timeIn: 'from jobStart',
         timeOut: '',
-        opNum: '',
-        jobNum: '',
-        partNum: '',
+        opNum: 'from jobStart',
+        jobNum: 'from jobStart',
         jobNotes: '',
-        dept: '',
+        dept: 'from jobStart',
         cycleTime: '',
         jobPhoto: null
     });
@@ -66,7 +66,6 @@ function JobForm() {
             timeOut: formData.timeOut || '00:00',
             opNum: formData.opNum || 'N/A',
             jobNum: formData.jobNum || 'N/A',
-            partNum: formData.partNum || 'N/A',
             jobNotes: formData.jobNotes || 'N/A',
             dept: formData.dept || 'N/A',
             cycleTime: formData.cycleTime || '00:00:00',
@@ -86,7 +85,6 @@ function JobForm() {
                 timeOut: '',
                 opNum: '',
                 jobNum: '',
-                partNum: '',
                 jobNotes: '',
                 dept: '',
                 cycleTime: '',
@@ -125,7 +123,7 @@ function JobForm() {
                 aria-label="Employee Number"
             />
 
-            <div className="input-with-button">
+            {/* <div className="input-with-button">
                 <label htmlFor="timeIn">Time In:</label>
                 <input 
                     type="time" 
@@ -139,7 +137,9 @@ function JobForm() {
                 <button type="button" onClick={() => setFormData(prev => ({ ...prev, timeIn: new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' }) }))}>
                     Set Current Time
                 </button>
-            </div>
+            </div> */}
+
+            <CurrentJobs />
 
             <div className="input-with-button">
                 <label htmlFor="timeOut">Time Out:</label>
@@ -183,17 +183,6 @@ function JobForm() {
                 maxLength="7"
                 placeholder="e.g., 123-4567"
                 aria-label="Job Number"
-            />
-
-            <label htmlFor="partNum">Part Number:</label>
-            <input 
-                type="text" 
-                id="partNum" 
-                name="partNum" 
-                required 
-                onChange={handleChange} 
-                value={formData.partNum} 
-                aria-label="Part Number"
             />
 
             <label htmlFor="jobNotes">Job Notes:</label>

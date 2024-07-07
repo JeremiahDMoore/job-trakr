@@ -7,8 +7,8 @@ function App() {
     return (
         <div className="container">
             <h1>JobTrakr</h1>
-            {/* <JobForm /> */}
-            <JobStart />
+            <JobForm />
+            {/* <JobStart /> */}
         </div>
     );
 }
